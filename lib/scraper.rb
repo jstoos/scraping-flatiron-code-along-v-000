@@ -14,6 +14,7 @@ class Scraper
       course.schedule = post.css(".date").text
       course.description = post.css("p").text
       binding.pry
+    end
   end
 
   # def get_courses
@@ -27,7 +28,7 @@ class Scraper
   #
 
 
-    def print_courses
+  def print_courses
     self.make_courses
     Course.all.each do |course|
       if course.title
@@ -36,7 +37,7 @@ class Scraper
         puts "  Description: #{course.description}"
       end
     end
-
+  end
 
 end
 
